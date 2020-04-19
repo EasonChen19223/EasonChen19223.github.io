@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>sams sandwhich accordian</title>
+	<link href="sams_sandwhich_style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Sam's sandwhich shop</h1>
+	<p></p>
+	<h2>Place your order here</h2>
+		<button class="accordion" name="order">Step 1 - Select your sandwhich size</button>
+		<div class="panel" >
+			<label><input name="bread_length" type="radio" value="6inch">6 Inch</label>
+			<label><input name="bread_length" type="radio" value="12inch">12 Inch</label>
+		</div>
+		<button class="accordion" name="order" >Step 2 - Select your choice of bread</button>
+		<div class="panel">
+			<label><input name="bread_type" type="radio" value="White">White</label> 
+			<label><input name="bread_type" type="radio" value="Wholegrain">Wholegrain</label> 
+			<label><input name="bread_type" type="radio" value="Italian">Italian</label> 
+			<label><input name="bread_type" type="radio" value="Rye">Rye</label> 
+			<label><input name="bread_type" type="radio" value="Wrap">Wrap</label>
+		</div>
+		<button class="accordion" name="order" >Step 3 - Select your cheese</button>
+		<div class="panel">
+			<label><input name="cheese" type="radio" value="Swiss">Swiss</label> 
+			<label><input name="cheese" type="radio" value="Cheddar">Cheddar</label> 
+			<label><input name="cheese" type="radio" value="Feta">Feta</label> 
+			<label><input name="cheese" type="radio" value="No Cheese">No Cheese</label>
+		</div><button class="accordion" name="order" >Step 4 - Select your meat</button>
+		<div class="panel">
+			<label><input name="meat" type="radio" value="Ham">Ham</label> 
+			<label><input name="meat" type="radio" value="Tuna">Tuna</label> 
+			<label><input name="meat" type="radio" value="Turkey">Turkey</label> 
+			<label><input name="meat" type="radio" value="Salami">Salami</label> 
+			<label><input name="meat" type="radio" value="Meatball">Meatball</label> 
+			<label><input name="meat" type="radio" value="Chicken">Chicken</label>
+		</div>
+		<button class="accordion" name="order" >Step 5 - Select your salads</button>
+		<div class="panel">
+			<label><input name="salad" type="checkbox" value="Lettuce">Lettuce</label> 
+			<label><input name="salad" type="checkbox" value="Tomatoes">Tomatoes</label> 
+			<label><input name="salad" type="checkbox" value="Carrot">Carrot</label> 
+			<label><input name="salad" type="checkbox" value="Cucumber">Cucumber</label> 
+			<label><input name="salad" type="checkbox" value="Capsicm">Capsicm</label>
+		</div>
+		<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+		  this.classList.toggle("active");
+		  var panel = this.nextElementSibling;
+		  if (panel.style.maxHeight) {
+		    panel.style.maxHeight = null;
+		  } else {
+		    panel.style.maxHeight = panel.scrollHeight + "px";
+		  } 
+		});
+		}
+		</script>
+	<h2>Order Summary</h2>
+	<div id="radioResults"></div>
+	<h2>Your details</h2><label>Your name:</label>
+	<form>
+		<input id="name" pattern="[a-zA-Z]\w{1,39}" placeholder="Please type your name" type="text"><br>
+		<label>Your cellphone number:</label> <input id="cellphone" pattern="02[0-9]\d{6,8}" placeholder="Please enter your cellphone number" type="tel"> 
+		</form>
+		<input id="submit_button" onclick="loopForm(document.order)" type="button" value="submit"> 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBK-zq2dyGBBu9C8HF0MgoeshBQ8pRpFSw",
+    authDomain: "sam-s-sandwhich-shopv1.firebaseapp.com",
+    databaseURL: "https://sam-s-sandwhich-shopv1.firebaseio.com",
+    projectId: "sam-s-sandwhich-shopv1",
+    storageBucket: "sam-s-sandwhich-shopv1.appspot.com",
+    messagingSenderId: "901741939262",
+    appId: "1:901741939262:web:bc98edf597801ceed0df6f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+	
+	
+	
+	
+	<script src="sams_sandwhich_v1.js"></script> 
+	
+</body>
+</html>
