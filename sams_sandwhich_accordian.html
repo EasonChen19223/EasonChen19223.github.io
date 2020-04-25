@@ -1,77 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>sams sandwhich accordian</title>
-	<link href="sams_sandwhich_style.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<title>sams_sandwhich_accordian.html</title>
+<link href="sams_sandwhich_style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 	<h1>Sam's sandwhich shop</h1>
 	<p></p>
 	<h2>Place your order here</h2>
-		<button class="accordion" name="order">Step 1 - Select your sandwhich size</button>
-		<div class="panel" >
-			<label><input name="bread_length" type="radio" value="6inch">6 Inch</label>
-			<label><input name="bread_length" type="radio" value="12inch">12 Inch</label>
-		</div>
-		<button class="accordion" name="order" >Step 2 - Select your choice of bread</button>
+	<form name="order">
+	
+		
+		<div class="accordion" >step 1- select your sandwhich size</div>
 		<div class="panel">
-			<label><input name="bread_type" type="radio" value="White">White</label> 
-			<label><input name="bread_type" type="radio" value="Wholegrain">Wholegrain</label> 
-			<label><input name="bread_type" type="radio" value="Italian">Italian</label> 
-			<label><input name="bread_type" type="radio" value="Rye">Rye</label> 
-			<label><input name="bread_type" type="radio" value="Wrap">Wrap</label>
+		<label><input type="radio" name="bread_length" value="6inch">6 Inch</label>
+		<label><input type="radio" name="bread_length" value="12inch">12 Inch</label>
+		</div>	
+			
+		<div class="accordion" >step 2 - select your choice of Bread</div>
+		<div class="panel">	
+		<label><input type="radio" name="bread_type" value="White">White</label>
+		<label><input type="radio" name="bread_type" value="Wholegrain">Wholegrain</label>
+		<label><input type="radio" name="bread_type" value="Italian">Italian</label>
+		<label><input type="radio" name="bread_type" value="Rye">Rye</label>
+		<label><input type="radio" name="bread_type" value="Wrap">Wrap</label>
 		</div>
-		<button class="accordion" name="order" >Step 3 - Select your cheese</button>
+		
+			
+		<div class="accordion" >step 3 - select your cheese</div>
 		<div class="panel">
-			<label><input name="cheese" type="radio" value="Swiss">Swiss</label> 
-			<label><input name="cheese" type="radio" value="Cheddar">Cheddar</label> 
-			<label><input name="cheese" type="radio" value="Feta">Feta</label> 
-			<label><input name="cheese" type="radio" value="No Cheese">No Cheese</label>
-		</div><button class="accordion" name="order" >Step 4 - Select your meat</button>
-		<div class="panel">
-			<label><input name="meat" type="radio" value="Ham">Ham</label> 
-			<label><input name="meat" type="radio" value="Tuna">Tuna</label> 
-			<label><input name="meat" type="radio" value="Turkey">Turkey</label> 
-			<label><input name="meat" type="radio" value="Salami">Salami</label> 
-			<label><input name="meat" type="radio" value="Meatball">Meatball</label> 
-			<label><input name="meat" type="radio" value="Chicken">Chicken</label>
+		<label><input type="radio" name="cheese" value="Swiss">Swiss</label>
+		<label><input type="radio" name="cheese" value="Cheddar">Cheddar</label>
+		<label><input type="radio" name="cheese" value="Feta">Feta</label>
+		<label><input type="radio" name="cheese" value="No cheese">No cheese</label>
 		</div>
-		<button class="accordion" name="order" >Step 5 - Select your salads</button>
-		<div class="panel">
-			<label><input name="salad" type="checkbox" value="Lettuce">Lettuce</label> 
-			<label><input name="salad" type="checkbox" value="Tomatoes">Tomatoes</label> 
-			<label><input name="salad" type="checkbox" value="Carrot">Carrot</label> 
-			<label><input name="salad" type="checkbox" value="Cucumber">Cucumber</label> 
-			<label><input name="salad" type="checkbox" value="Capsicm">Capsicm</label>
+		
+		
+		
+			
+		<div class="accordion">step 4 - select your meat</div>
+		<div class="panel">	
+		<label><input type="radio" value="Ham">Ham</label>
+		<label><input type="radio" value="Tuna">Tuna</label>
+		<label><input type="radio" value="Turkey">Turkey</label>
+		<label><input type="radio" value="Salami">Salami</label>
+		<label><input type="radio" value="Meatball">Meatball</label>
+		<label><input type="radio" value="Chicken">Chicken</label>
 		</div>
-		<script>
-		var acc = document.getElementsByClassName("accordion");
-		var i;
+		
+			
+			
+		<div class="accordion">step 5 - select your salads</div>
+		<div class="panel">
+		<label><input type="checkbox" value="Lettuce">Lettuce</label>
+		<label><input type="checkbox" value="Tomatoes">Tomatoes</label>
+		<label><input type="checkbox" value="Carrot">Carrot</label>
+		<label><input type="checkbox" value="Cucumber">Cucumber</label>
+		<label><input type="checkbox" value="Capsicum">Capsicum</label>
+		</div>
+		
+		
 
-		for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", function() {
-		  this.classList.toggle("active");
-		  var panel = this.nextElementSibling;
-		  if (panel.style.maxHeight) {
-		    panel.style.maxHeight = null;
-		  } else {
-		    panel.style.maxHeight = panel.scrollHeight + "px";
-		  } 
-		});
-		}
-		</script>
-	<h2>Order Summary</h2>
-	<div id="radioResults"></div>
-	<h2>Your details</h2><label>Your name:</label>
-	<form>
-		<input id="name" pattern="[a-zA-Z]\w{1,39}" placeholder="Please type your name" type="text"><br>
-		<label>Your cellphone number:</label> <input id="cellphone" pattern="02[0-9]\d{6,8}" placeholder="Please enter your cellphone number" type="tel"> 
-		</form>
-		<input id="submit_button" onclick="loopForm(document.order)" type="button" value="submit"> 
+		
+		<button type="reset">Reset</button>
+	</form>
+	
+	
+	<h2>Your details</h2>
+	<label>Your name:</label><input type="text" id="customers_name" placeholder="Please type your name" pattern="[a-zA-Z]\w{1,39}"><br>
+	<label>Your cellphone number:</label><input id="cellphone" type="tel" placeholder="Please enter your phone number" pattern="02[0-9]\d{6,8}">
+	<input type="button" value="submit" id="submit_button" onClick="loopForm(document.order)">
+	
+	<h3>Order Summary:</h3>
+	<br>
+	<span id = "nameOutput"></span>
+	<span id = "sandwhichOutput"></span>
+	
+	<!--Overlay displayed when the data has been pushed to firebase -->
+	<div id="confirmOverlay">
+		<p>Your sandwhich will be ready to collect soon</p>
+		<a href="javascript:void(0)" onClick="document.getElementById('confirmOverlay').style.height = '0'"></a>
+	</div>
+
+	
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -91,10 +106,10 @@
   firebase.initializeApp(firebaseConfig);
 </script>
 	
+	<script src="sams_sandwhich_v1.js"></script>
 	
 	
-	
-	<script src="sams_sandwhich_v1.js"></script> 
-	
+
+
 </body>
 </html>
